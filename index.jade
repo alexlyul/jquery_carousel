@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title jQuery slider
+        link(rel='stylesheet' href='slider.css')
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+        script(src='slider.js' defer)
+        link(href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans" rel="stylesheet")
+    body
+
+        .slider
+            .dots
+                each item in [0, 1, 2, 3]
+                    .dot(id='dot_#{item}' data-id='#{item}')
+            .slide(data-imageurl='images/slide_1.jpg' data-sliderid='0').current
+                .slide-caption
+                    h2 jQuery is a cross-platform JavaScript library
+                    p jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications. jQuery also provides capabilities for developers to create plug-ins on top of the JavaScript library.
+            .slide(data-imageurl='images/slide_2.jpg' data-sliderid='1')
+                .slide-caption
+                    h2 Core features
+                    P The set of jQuery core features DOM element selections, traversal and manipulation enabled by its selector engine (named "Sizzle" from v1.3), created a new "programming style", fusing algorithms and DOM data structures.
+            .slide(data-imageurl='images/slide_3.jpg' data-sliderid='2')
+                .slide-caption
+                    h2 Microsoft and Nokia
+                    p Microsoft and Nokia bundle jQuery on their platforms. Microsoft includes it with Visual Studio for use within Microsoft's ASP.NET AJAX and ASP.NET MVC frameworks while Nokia has integrated it into the Web Run-Time widget development platform.
+            .slide(data-imageurl='images/slide_4.jpg' data-sliderid='3')
+                .slide-caption
+                    h2 History
+                    p jQuery was originally released in January 2006 at BarCamp NYC by John Resig and was influenced by Dean Edwards' earlier cssQuery library. It is currently maintained by a team of developers led by Timmy Willison (with the jQuery selector engine, Sizzle, being led by Richard Gibson).
+            script.
+                let i = 1;
+                do {
+                    (new Image()).src = `images/slide_${i}.jpg`;
+                    i++;
+                } while ( i < 5)
