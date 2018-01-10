@@ -1,4 +1,5 @@
 $(window).on('load', (() => {
+    $('.slider').toggle();
     const dots = $('.dot');
     let current = 0;
     $(dots[current]).css({background: 'white'});
